@@ -13,12 +13,13 @@ app.config["DEBUG"] = True
 
 
 @app.route('/', methods=['GET'])
-def home():
-    return "<h1>Hello Flask!</h1>"
+def xxx():
+    return "<h1>Hello Flask xxx 5500!</h1>"
 
-app.run
+#exit
+app.run(debug=False, port=5500)
 
-#http://127.0.0.1:5000/
+# http://127.0.0.1:5000/
 
 #cd C:\Users\USER\gapminder-api
 #set FLASK_APP=api_sample1.py

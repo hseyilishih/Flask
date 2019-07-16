@@ -51,7 +51,8 @@ cities = [tpe, nyc, ldn]
 
 gapminder = pd.read_csv("gapminder.csv")
 gapminder_list = []
-nrows = gapminder.shape[0]
+nrows = gapminder.shape[0] #row of your input data from csv
+
 for i in range(nrows):
     ser = gapminder.loc[i, :]
     row_dict = {}
@@ -85,7 +86,7 @@ def cities_all():
 def gapminder_all():
     return jsonify(gapminder_list)
 
-app.run
+app.run(debug=False)
 
 #cd C:\Users\USER\gapminder-api
 #set FLASK_APP=api_sample2.py
@@ -93,4 +94,5 @@ app.run
 
 #http://127.0.0.1:5000/
 #http://127.0.0.1:5000/cities/all
-#http://127.0.0.1:5000/gapminder/all
+
+# http://127.0.0.1:5000/gapminder/all

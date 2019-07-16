@@ -11,14 +11,15 @@ import pandas as pd
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
-app.config["JSON_AS_ASCII"] = False
+app.config["JSON_AS_ASCII"] = False #for中文的問題
 
 # test data
 tpe = {
     "id": 0,
     "city_name": "Taipei",
     "country_name": "Taiwan",
-    "is_capital": True,
+    "is_capital": False,
+    "test_field": 'this is a test',
     "location": {
         "longitude": 121.569649,
         "latitude": 25.036786
@@ -57,11 +58,11 @@ def home():
 '''
 
 @app.route('/cities/all', methods=['GET'])
-def cities_all():
+def xxx():
     return jsonify(cities)
 
 
-app.run
+app.run(debug=False)
 
 
 
@@ -70,4 +71,4 @@ app.run
 #flask run
 
 #http://127.0.0.1:5000/
-#http://127.0.0.1:5000/cities/all
+# http://127.0.0.1:5000/cities/all

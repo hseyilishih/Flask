@@ -80,16 +80,17 @@ def cities_all():
 
 
 @app.route('/cities', methods=['GET'])
-def city_name():
+def xxx():
     if 'city_name' in request.args:
-        city_name = request.args['city_name']
+        city_name_received = request.args['city_name']
     else:
-        return "Error: No city_name provided. Please specify a city_name."
+        return "Error: No city_name provided. Please input ?city_name="
+    
     results = []
 
-    for city in cities:
-        if city['city_name'] == city_name:
-            results.append(city)
+    for x in cities:
+        if x['city_name'] == city_name_received:
+            results.append(x)        
 
     return jsonify(results)
 
@@ -114,7 +115,7 @@ def country():
     return jsonify(results)
 
 
-app.run()
+app.run(debug=False)
 
 #cd C:\Users\USER\gapminder-api
 #set FLASK_APP=api_sample2.py
